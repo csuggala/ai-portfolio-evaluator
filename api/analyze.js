@@ -95,6 +95,9 @@ Return ONLY valid JSON, no markdown, no backticks:
     "risk_score": "Low" | "Medium" | "High" | "Critical",
     "risk_numeric": 3,
     "risk_score_rationale": "1 sentence on harm if AI fails",
+    "risk_mitigations": [
+      {"mitigation": "Specific action to reduce this risk", "impact": "High" | "Medium" | "Low"}
+    ],
     "harm_types": ["Reputational", "Financial", "Physical", "Legal", "Operational"],
     "technical_feasibility": {
       "score": 3,
@@ -144,6 +147,7 @@ Scoring:
 - input_quality.overall: High = business value quantified + data described + monitoring planned; Medium = some gaps; Low = vague inputs with little specificity
 - input_quality.score_confidence: reflects how much the vagueness of inputs affects reliability of scores â€” High/Medium/Low
 - input_quality.flags: max 2 items â€” only flag genuinely problematic vagueness, not nitpicks
+- risk_mitigations: 2-3 specific, actionable ways to reduce the risk score â€” concrete steps the org can take before or during implementation to improve safety and odds of success
 - regulatory_requirements: max 4 items â€” most important only
 - compliance_warnings: max 3 items
 - harm_types: max 3 items
